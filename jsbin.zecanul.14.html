@@ -1,0 +1,305 @@
+<!DOCTYPE html>
+<!--
+Created using JS Bin
+http://jsbin.com
+
+Copyright (c) 2022 by k-mencser-b (http://jsbin.com/zecanul/14/edit)
+
+Released under the MIT license: http://jsbin.mit-license.org
+-->
+<meta name="robots" content="noindex">
+<html>
+
+<link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" rel="stylesheet" type="text/css" />
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width">
+  <title>JS Bin</title>
+  <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+ <link rel="preconnect" href="https://fonts.googleapis.com">
+ <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+ <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700&display=swap" rel="stylesheet"> 
+  <style id="jsbin-css">
+padding-top: 2vh;position: absolute;ute;/* http://meyerweb.com/eric/tools/css/reset/ 
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section {
+	display: block;
+}
+body {
+	line-height: 1;
+}
+ol, ul {
+	list-style: none;
+}
+blockquote, q {
+	quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: '';
+	content: none;
+}
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+
+
+.body{
+  box-sizing: border-box;
+  margin: 0;
+  font-family: 'Montserrat', sans-serif;
+}
+
+.item-1{
+  grid-area: main1;
+  background-color: #6200EA;
+  width: 50vw;
+  height: 88.88vh;
+  color: #ffffff;
+  font-size: 4vh;
+  padding-top: 2vh;
+  padding-left: 2vw;
+}
+.item-2{
+  grid-area: main2;
+  background: url(https://i.pinimg.com/564x/c3/a5/d9/c3a5d9e0390b66a69fffc68cf6e2a8cf.jpg);
+  width: 50vw;
+  height: 88.88vh;
+}
+.item-3{
+  grid-area: footer;
+  background-color: #211138;
+  width: 100vw;
+  height: 11.11vh;
+}
+
+
+
+.container{
+ display: grid;
+  width: 100vw;
+  height: 100vh;
+  grid-template-columns: 50vw 50vw;
+  grid-template-rows: 88.88hv 11.11hv;
+  grid-template-areas:
+    "main1 main2"
+    "footer footer";
+  justify-content: stretch;
+  align-items: stretch;
+  margin-right: 0;
+  margin-left: 0;
+  padding: 0;
+  column-gap: 0;
+}
+
+
+.block1{
+  display: flex;
+  flex-direction: column;
+  align-content: space-around;
+  width: 33.75vw;
+    height: 40vh;
+  background-color: #6200EA;
+  margin-top: 24.44vh;
+  margin-left: 8.125vw;
+  font-family: 'Montserrat', sans-serif;
+}
+a{
+  color: #ffffff;
+  font-size: 4.00vh;
+  margin-top: 6.8vh;
+  margin-left: 3.75vw;
+  font-family: 'Montserrat', sans-serif;
+}
+p{
+  font-family: 'Montserrat', sans-serif;
+}
+
+
+
+
+.block2{
+  display: flex;
+  flex-direction: column;
+  width: 33.75vw;
+  height: 59.99vh;
+  background-color: #ffffff;
+  margin-top: 14.44vh;
+  margin-left: 8.125vw;
+}
+.row1{
+  width: 26.25vw;
+  height: 11.11vh;
+  margin-top: 6.66vh;
+  margin-left: 3.75vw;
+  text-align: left;
+  font-size: 4.44vh;
+  color: #211138;
+  
+}
+.row2{
+  width: 26.25vw;
+  height: 5.55vh;
+  background-color: #F4F3F5;
+  margin-top: 3.33vh;
+  margin-left: 3.75vw; 
+  font-size: 1.55vh;
+  color:#211138;
+}
+.opal{
+  opacity: 0.25;
+  padding-left: 1.5vw;
+  padding-top: 1.7vh;
+}
+.row3{
+  width: 26.25vw;
+  height: 5.55vh;
+  background-color: #F4F3F5;
+  margin-top: 1.66vh;
+  margin-left: 3.75vw;
+  color: #211138;
+  font-size: 1.55vh;
+}
+.row4{
+  width: 26.25vw;
+  height: 1.1vh;
+  margin-top: 1.11vh;
+  margin-left: 3.75vw;
+  color: #6200EA;
+  text-align: right;
+  font-size: 1.66vh;
+}
+.row5{
+  width: 26.25vw;
+  height: 5.55vh;
+  background-color: #6200EA;
+  margin-top: 3.33vh;
+  margin-left: 3.75vw;
+  border: 2px solid #6200EA;
+  border-radius: 24px;
+  color: #ffffff;
+  text-align: center;
+  font-size: 1.33vh;
+  padding-top: 2vh;
+}
+.row6{
+  width: 26.25vw;
+  height: 5.55vh;
+  background-color: #ffffff;
+  margin-top: 1.66vh;
+  margin-left: 3.75vw;
+  border: 2px solid #6200EA;
+  border-radius: 24px;
+  color: #6200EA;
+  font-size: 1.33vh;
+  text-align: center;
+  padding-top: 2vh;
+}
+
+
+
+
+
+
+.footer{
+  position: absolute;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  margin-top: 4vh;
+  margin-left: 30vw;
+  letter-spacing: 0.15vw;
+}
+.withe{
+  color: #B2ACBA;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 1.33vh;
+}
+.blue{
+  color: #6200EA;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 1.33vh;
+}
+
+</style>
+</head>
+<body>
+  <div class="container">
+    
+    
+    <div class="item-1">
+      <p>O LOGO TEXT</p>
+      <div class="block1">
+        <a href="#"><i class="fa fa-handshake-o" aria-hidden="true"></i>  Join the community.</a>
+        <a href="#"><i class="fa fa-graduation-cap" aria-hidden="true"></i>  Explore new features.</a>
+        <a href="#"><i class="fa fa-smile-o" aria-hidden="true"></i>  Get incredible results.</a>
+      </div>
+    </div>
+    
+    
+    <div class="item-2">
+      <div class="block2">
+        <div class="row1">
+          <p>Some catchy call to action text.</p>
+        </div>
+        <div class="row2">
+          <p class="opal">Login/Email</p>
+        </div>
+        <div class="row3">
+          <p class="opal">Password</p>
+        </div>
+        <div class="row4">
+          <p>FORGET PASSWORD?</p>
+        </div>
+        <div class="row5">
+          <p>SIGN UP</p>
+        </div>
+        <div class="row6">
+          <p>LOG IN</p>
+        </div>
+      </div>
+    </div>
+    
+    
+    <div class="item-3">
+      <div class="footer">
+        <p class="withe">© 2020 Copyright </p>
+        <p class="blue">Brand Name</p>
+        <p class="withe">/ Design by</p>
+        <p class="blue">Student Name</p>
+      <div>
+      
+
+    </div>
+  </div>
+<script src="https://code.jquery.com/jquery.min.js"></script>
+ <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script> 
+</body>
+</html>
